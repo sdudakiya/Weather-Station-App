@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>
+      DashBoard
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+ <ion-content  class="card-background-page">
+        <div *ngIf="show">
+          <ion-card>
+              <ion-card-header>
+                Current Temperature
+              </ion-card-header>
+              <ion-card-content>
+                {{dbData.field1}}
+              </ion-card-content>
+            </ion-card>
+
+            <ion-card>
+                <ion-card-header>
+                  Current Pressure
+                </ion-card-header>
+                <ion-card-content>
+                  {{dbData.field2}}
+                </ion-card-content>
+              </ion-card>
+  
+            </div> 
+</ion-content>

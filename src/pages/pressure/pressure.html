@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar color="danger">
+      <ion-title>
+        Pressure Chart
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content>
+    <div style="width: 100%; height: 80%">
+    <ion-card>
+        <ion-card-header>
+          Pressure
+        </ion-card-header>
+        <ion-card-content>
+            <canvas
+                baseChart
+                [chartType]="'line'"
+                [datasets]="pressureChartData"
+                [labels]="pressureChartLabels"
+                [options]="pressureChartOptions"
+                [legend]="true"
+                (chartClick)="onChartClick($event)">
+            </canvas>
+        </ion-card-content>
+      </ion-card> 
+      </div>
+  </ion-content>
+  
