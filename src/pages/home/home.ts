@@ -21,7 +21,7 @@ export class HomePage {
   }
 
   ionViewDidEnter(){
-    Observable.interval(20000).subscribe(x => {
+    Observable.interval(2000).subscribe(x => {
       this.getFeeds();
     }); 
   }
@@ -32,7 +32,7 @@ export class HomePage {
       this.field1 = this.users.channel.field1;
       this.last_entry_id = this.users.channel.last_entry_id;
       this.getLatestFeed(this.last_entry_id);
-      console.log(this.dbData);
+      //console.log(this.dbData);
       //console.log(this.users);
     });
   }
@@ -42,7 +42,7 @@ export class HomePage {
       for(let key in feed){
       if(feed.hasOwnProperty(key)){
           if(feed[key]['entry_id'] == this.last_entry_id){
-            console.log('Key found')
+            //console.log('Key found in home')
             this.dbData = feed[key];
             this.show = true;
           }

@@ -13,6 +13,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ThinkspeakProvider } from '../providers/thinkspeak/thinkspeak';
 import { ChartsModule } from 'ng2-charts';
+import { GaugeModule } from 'angular-gauge';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ChartsModule } from 'ng2-charts';
     HttpModule,
     ChartsModule,
     HttpClientModule,
+    GaugeModule.forRoot(),    
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="danger">
+  <ion-navbar color="danger" class="navBar">
     <ion-title>
       DashBoard
     </ion-title>
@@ -7,23 +7,43 @@
 </ion-header>
  <ion-content  class="card-background-page">
         <div *ngIf="show">
-          <ion-card>
-              <ion-card-header>
-                Current Temperature
-              </ion-card-header>
-              <ion-card-content>
-                {{dbData.field1}}
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card>
-                <ion-card-header>
-                  Current Pressure
-                </ion-card-header>
-                <ion-card-content>
-                  {{dbData.field2}}
-                </ion-card-content>
-              </ion-card>
-  
+            <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-card>
+                        <ion-card-header>
+                          <h1>Current Temperature</h1>
+                        </ion-card-header>
+                        <ion-card-content>
+                            <mwl-gauge
+                            [max]="100"
+                            [dialStartAngle]="-90"
+                            [dialEndAngle]="-90.001"
+                            value= {{dbData.field1}}
+                            [animated]="true"
+                            [animationDuration]="1">
+                          </mwl-gauge>
+                        </ion-card-content>
+                      </ion-card>          
+                  </ion-col>
+                  <ion-col>
+                  <ion-card>
+                    <ion-card-header>
+                        <h1>Current Pressure</h1>
+                      </ion-card-header>
+                      <ion-card-content>
+                          <mwl-gauge
+                          [max]="1500"
+                          [dialStartAngle]="-90"
+                          [dialEndAngle]="-90.001"
+                          value= {{dbData.field2}}
+                          [animated]="true"
+                          [animationDuration]="1">
+                        </mwl-gauge>
+                      </ion-card-content>
+                    </ion-card>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
             </div> 
 </ion-content>

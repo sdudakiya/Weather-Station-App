@@ -61,7 +61,6 @@ export class TemperaturePage {
       }
     }
   }
-
   
   temperatureChartOptions = {
     responsive: true
@@ -85,4 +84,5 @@ export class TemperaturePage {
       });
       this.temperatureChartLabels = [...this.temperatureChartLabels, label];
     }
+    
 }

@@ -17,7 +17,19 @@ export class ThinkspeakProvider {
   
     getFeeds() {
       return new Promise(resolve => {
-        this.http.get(this.apiUrl+'/feed').subscribe(data => {
+        this.http.get(this.apiUrl+'/feed?results=10').subscribe(data => {
+          //console.log(data);
+          let response = data;
+          resolve(response);
+        }, err => {
+          console.log(err);
+        });
+      });
+  }
+
+    getNewFeeds() {
+      return new Promise(resolve => {
+        this.http.get(this.apiUrl+'/feed?results=1').subscribe(data => {
           //console.log(data);
           let response = data;
           resolve(response);
